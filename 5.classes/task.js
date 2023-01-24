@@ -131,6 +131,9 @@ class Student {
 
     getAverage() {
         const subjects = Object.keys(this.marks)
+        if (subjects.length === 0) {
+            return 0
+        }
         const sumOfAvg = subjects.reduce((acc, subject) => {
             const subjectAvgMark = this.getAverageBySubject(subject)
             return acc + subjectAvgMark
